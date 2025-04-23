@@ -26,6 +26,7 @@ dependencies:
   flutter_chess_board: ^1.0.1
   syncfusion_flutter_pdfviewer: ^29.1.39
   path_provider: ^2.0.10
+  device_frame: ^1.1.0
 
 
 
@@ -69,9 +70,16 @@ flutter:
     - assets/images/practice/gmail.png
     - assets/pdf/tutorial1.png
     - assets/pdf/pdfbg.png
+    - assets/images/gmeetdesign.png
 
     #pdf
     - assets/pdf/tutorial1.pdf
+
+  fonts:
+    - family: Caros
+      fonts:
+        - asset: assets/font/Caros-Regular.otf
+
 
 
   # (Optional) Fonts section placeholder

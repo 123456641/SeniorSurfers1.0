@@ -95,7 +95,7 @@ class GoogleMeetTutorialPage extends StatelessWidget {
                               alignment: imageAlignment, // Left-aligned images
                               child: Image.asset(
                                 step['image']!,
-                                width: 320, // Smaller width for the image
+                                width: 338, // Smaller width for the image
                                 height: 203, // Smaller height for the image
                                 fit: BoxFit.cover, // Ensure the image is covered inside the given dimensions
                               ),

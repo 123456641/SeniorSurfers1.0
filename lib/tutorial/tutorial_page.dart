@@ -38,6 +38,34 @@ class TutorialPage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 20),
+            // Add Row with two buttons side by side
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                ElevatedButton(
+                  onPressed: () {
+                    // Handle progress button action here
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color(0xFF27445D), // Set the button color
+                    foregroundColor: Colors.white, // Set the text color to white
+                  ),
+                  child: const Text('Progress'),
+                ),
+                const SizedBox(width: 16), // Add space between the buttons
+                ElevatedButton(
+                  onPressed: () {
+                    // Handle dashboard button action here
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color(0xFF27445D), // Set the button color
+                    foregroundColor: Colors.white, // Set the text color to white
+                  ),
+                  child: const Text('Dashboard'),
+                ),
+              ],
+            ),
+            const SizedBox(height: 20),
             Expanded(
               child: GridView.count(
                 crossAxisCount: 2,
