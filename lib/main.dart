@@ -13,7 +13,8 @@ import 'admin/admin_dashboard.dart';
 import 'admin/admin_login.dart';
 import 'notification/notification.dart';
 import 'tutorial/googlemeet.dart';
-
+import 'forget_password_page.dart';
+//import 'reset_password_page.dart';      not yet sure pa dzai but gumagana na yung signup page and login page
 
 
 void main() async {
@@ -52,6 +53,8 @@ class MyApp extends StatelessWidget {
         '/admin-login': (context) => const AdminLoginPage(),
         '/notification': (context) => NotificationPage(),
         '/googlemeet': (context) => const GoogleMeetTutorialPage(),
+        '/forget-password': (context) => ForgetPasswordPage(),
+        //'/reset-password': (context) => ResetPasswordPage(token: ModalRoute.of(context)!.settings.arguments as String), // Handle token here
 
       },
     );

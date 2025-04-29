@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
+import 'forget_password_page.dart';  // Import the ForgetPasswordPage
 
 class LoginPagee extends StatefulWidget {
   const LoginPagee({super.key});
@@ -36,7 +37,7 @@ class _LoginPageState extends State<LoginPagee> {
       );
 
       if (response.user != null) {
-        Navigator.pushReplacementNamed(context, '/dashboard');
+        Navigator.pushReplacementNamed(context, '/dashboard');  // Redirect to the dashboard
       } else {
         setState(() {
           _errorMessage = "Login failed. Please try again.";
@@ -55,16 +56,6 @@ class _LoginPageState extends State<LoginPagee> {
     } finally {
       setState(() {
         _isLoading = false;
-      });
-    }
-  }
-
-  Future<void> _signInWithProvider(OAuthProvider provider) async {
-    try {
-      await Supabase.instance.client.auth.signInWithOAuth(provider);
-    } catch (e) {
-      setState(() {
-        _errorMessage = "Social login failed. Please try again.";
       });
     }
   }
@@ -144,35 +135,16 @@ class _LoginPageState extends State<LoginPagee> {
                         child: const Text('Login'),
                       ),
                 const SizedBox(height: 20),
-                Row(
-                  children: const <Widget>[
-                    Expanded(child: Divider(color: primaryTextColor)),
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 8.0),
-                      child: Text(
-                        "OR",
-                        style: TextStyle(color: primaryTextColor),
-                      ),
-                    ),
-                    Expanded(child: Divider(color: primaryTextColor)),
-                  ],
-                ),
-                const SizedBox(height: 20),
-                SizedBox(
-                  width: double.infinity,
-                  child: OutlinedButton.icon(
-                    icon: Image.asset('assets/images/googlelogo.png', height: 20),
-                    label: const Text('Continue with Google'),
-                    onPressed: () => _signInWithProvider(OAuthProvider.google),
-                  ),
-                ),
-                const SizedBox(height: 10),
-                SizedBox(
-                  width: double.infinity,
-                  child: OutlinedButton.icon(
-                    icon: Image.asset('assets/images/facebooklogo.png', height: 20),
-                    label: const Text('Continue with Facebook'),
-                    onPressed: () => _signInWithProvider(OAuthProvider.facebook),
+                TextButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ForgetPasswordPage()), // Navigate to ForgetPasswordPage
+                    );
+                  },
+                  child: const Text(
+                    'Forgot Password?',
+                    style: TextStyle(color: primaryTextColor),
                   ),
                 ),
                 const SizedBox(height: 20),

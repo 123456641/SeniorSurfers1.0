@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'header_widget.dart';
-import 'practice_mode_apps/googleMeet.dart';
-import 'practice_mode_apps/zoom.dart';
-import 'practice_mode_apps/gmail.dart';
-import 'practice_mode_apps/viber.dart';
-import 'practice_mode_apps/whatsapp.dart';
-import 'practice_mode_apps/cliqq.dart';
+import 'practice_mode_apps/GoogleMeetPage/googleMeet.dart';
+import 'practice_mode_apps/ZoomPage/zoom.dart';
+import 'practice_mode_apps/GmailPage/gmail.dart';
+import 'practice_mode_apps/ViberPage/viber.dart';
+import 'practice_mode_apps/WhatsappPage/whatsapp.dart';
+import 'practice_mode_apps/CliqqPage/cliqq.dart';
 
 class PracticeModePage extends StatelessWidget {
   final List<_AppButtonData> apps = [
