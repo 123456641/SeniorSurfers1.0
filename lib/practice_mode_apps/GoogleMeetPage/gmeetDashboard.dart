@@ -100,7 +100,14 @@ class gmeetDashboard extends StatelessWidget {
                         shape: BoxShape.circle,
                       ),
                       alignment: Alignment.center,
-                      child: const Text("L", style: TextStyle(color: Color(0xFFd9c7c7), fontWeight: FontWeight.bold, fontSize: 16)),
+                      child: ClipOval(
+                        child: Image.asset(
+                          'assets/images/elderpfp.png', // Path to your profile picture
+                          width: 40,
+                          height: 40,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
                     ),
                   ],
                 ),
@@ -138,8 +145,8 @@ class gmeetDashboard extends StatelessWidget {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: const [
-                          Text("BSCS2-A CSC221A/L - Applicat...", style: TextStyle(color: Color(0xFFd9c7c7), fontSize: 16)),
-                          Text("2–7 pm", style: TextStyle(color: Color(0xFFd9c7c7), fontSize: 13, fontWeight: FontWeight.w300)),
+                          Text("Wellness Meeting", style: TextStyle(color: Color(0xFFd9c7c7), fontSize: 16)),
+                          Text("8-10 am", style: TextStyle(color: Color(0xFFd9c7c7), fontSize: 13, fontWeight: FontWeight.w300)),
                         ],
                       ),
                     ],

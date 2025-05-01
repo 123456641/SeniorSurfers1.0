@@ -14,8 +14,10 @@ import 'admin/admin_login.dart';
 import 'notification/notification.dart';
 import 'tutorial/googlemeet.dart';
 import 'forget_password_page.dart';
-//import 'reset_password_page.dart';      not yet sure pa dzai but gumagana na yung signup page and login page
-
+import 'progress/progress.dart';
+import 'reset_password_page.dart';
+import 'package:uni_links/uni_links.dart';
+import 'dart:async';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -54,8 +56,11 @@ class MyApp extends StatelessWidget {
         '/notification': (context) => NotificationPage(),
         '/googlemeet': (context) => const GoogleMeetTutorialPage(),
         '/forget-password': (context) => ForgetPasswordPage(),
-        //'/reset-password': (context) => ResetPasswordPage(token: ModalRoute.of(context)!.settings.arguments as String), // Handle token here
-
+        '/progress': (context) => const ProgressPage(),
+        '/reset-password':
+            (context) => ResetPasswordPage(
+              token: ModalRoute.of(context)!.settings.arguments as String,
+            ), // Handle token here
       },
     );
   }

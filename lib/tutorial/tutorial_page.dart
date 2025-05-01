@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'pdf_viewer_page.dart';  // Import PDF viewer page
 import '../header_widget.dart'; // Import custom header widget
+import '../dashboard.dart'; // ✅ Import dashboard page
 
 class TutorialPage extends StatelessWidget {
   TutorialPage({Key? key}) : super(key: key);
@@ -38,28 +39,31 @@ class TutorialPage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 20),
-            // Add Row with two buttons side by side
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 ElevatedButton(
                   onPressed: () {
-                    // Handle progress button action here
+                   Navigator.pushNamed(context, '/progress');
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFF27445D), // Set the button color
-                    foregroundColor: Colors.white, // Set the text color to white
+                    backgroundColor: const Color(0xFF27445D),
+                    foregroundColor: Colors.white,
                   ),
                   child: const Text('Progress'),
                 ),
-                const SizedBox(width: 16), // Add space between the buttons
+                const SizedBox(width: 16),
                 ElevatedButton(
                   onPressed: () {
-                    // Handle dashboard button action here
+                    // ✅ Navigate to DashboardPage
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (_) => DashboardPage()),
+                    );
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFF27445D), // Set the button color
-                    foregroundColor: Colors.white, // Set the text color to white
+                    backgroundColor: const Color(0xFF27445D),
+                    foregroundColor: Colors.white,
                   ),
                   child: const Text('Dashboard'),
                 ),
@@ -107,11 +111,16 @@ class TutorialPage extends StatelessWidget {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Expanded(child: Image.asset(t.imagePath, fit: BoxFit.contain)),
+                        Expanded(
+                          child: Image.asset(t.imagePath, fit: BoxFit.contain),
+                        ),
                         const SizedBox(height: 8),
                         Text(
                           t.label,
-                          style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+                          style: const TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w500,
+                          ),
                         ),
                       ],
                     ),
